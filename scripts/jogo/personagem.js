@@ -36,6 +36,5 @@ class Personagem {
         if( this.frameAtual>= this.matriz.length -1 ){
             this.frameAtual = 0;
         }
-
     }
 }
