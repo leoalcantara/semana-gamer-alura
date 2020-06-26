@@ -2,7 +2,8 @@ class Inimigo extends Animacao {
     constructor(
         matriz,
         imagem,
-        x,        
+        x, 
+        variacaoY,       
         largura,
         altura,
         larguraSprite,
@@ -11,7 +12,8 @@ class Inimigo extends Animacao {
             super(
                 matriz,
                 imagem,
-                x,        
+                x, 
+                variacaoY,       
                 largura,
                 altura,
                 larguraSprite,
