@@ -4,6 +4,7 @@ let imagemInimigo;
 
 let cenario;
 let somDojogo;
+let somDoPulo;
 let inimigo;
 
 const matrizInimigo = [
@@ -61,6 +62,7 @@ function preload(){
   imagemPersonagem = loadImage('./imagens/personagem/correndo.png');
   imagemInimigo = loadImage('./imagens/inimigos/gotinha.png');
   somDojogo = loadSound('./sons/trilha_jogo.mp3');
+  somDoPulo = loadSound('./sons/jump.mp3');
 }
 
 function setup() {
@@ -69,12 +71,13 @@ function setup() {
   personagem = new Personagem(matrizPersonagem, imagemPersonagem, 0,110,135,220,270);
   inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52 , 52, 52, 105, 105);
   frameRate(40);
-  //somDojogo.loop();
+  somDojogo.loop();
 }
 
 function keyPressed(){
   if(key === 'ArrowUp'){
     personagem.pula();
+    somDoPulo.play();
     //console.log('pressionado')
   }
  
@@ -89,6 +92,11 @@ function draw() {
 
   inimigo.exibe();
   inimigo.move(); 
+
+  if(personagem.estaColidindo(inimigo)){
+    console.log('colidiu');
+    noloop();
+  }
   
 }
 
