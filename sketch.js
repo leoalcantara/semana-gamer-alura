@@ -71,7 +71,7 @@ function setup() {
   personagem = new Personagem(matrizPersonagem, imagemPersonagem, 0,110,135,220,270);
   inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52 , 52, 52, 105, 105);
   frameRate(40);
-  somDojogo.loop();
+  //somDojogo.loop();
 }
 
 function keyPressed(){
