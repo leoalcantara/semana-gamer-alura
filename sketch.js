@@ -13,6 +13,8 @@ let inimigoGrande;
 let inimigoVoador;
 let pontuacao;
 
+let inimigoAtual = 0;
+
 
 const matrizInimigo = [
   [0, 0],
@@ -138,8 +140,8 @@ function setup() {
   personagem = new Personagem(matrizPersonagem, imagemPersonagem, 0, 30, 110, 135, 220, 270);
 
   const inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52 , 30, 52, 52, 104, 104, 10, 200);
-  const inimigoVoador = new Inimigo(matrizInimigoVoador, imagemInimigoVoador, width - 52 , 200, 100, 75, 200, 150, 10, 1500);
-  const inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande, width * 2 , 0, 200, 200, 400, 400, 10, 2500);
+  const inimigoVoador = new Inimigo(matrizInimigoVoador, imagemInimigoVoador, width - 52 , 200, 100, 75, 200, 150, 10, 200);
+  const inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande, width * 2 , 0, 200, 200, 400, 400, 15, 200);
  
   inimigos.push(inimigo);
   inimigos.push(inimigoGrande);
@@ -152,34 +154,40 @@ function setup() {
 function keyPressed(){
   if(key === 'ArrowUp'){
     personagem.pula();
-    somDoPulo.play();
-    //console.log('pressionado')
-  }
- 
+    //somDoPulo.play();    
+  } 
 }
 
-function draw() {
+function draw() { 
   cenario.exibe();
-  cenario.move(); 
+  cenario.move();   
 
   pontuacao.exibe();
   pontuacao.adicionarPonto();
 
   personagem.exibe();
-  personagem.aplicaGravidade();
+  personagem.aplicaGravidade();  
 
+  const inimigo = inimigos[inimigoAtual];  
+  const inimigoVisivel =  inimigo.x < -inimigo.largura;
+    
+  inimigo.exibe();
+  inimigo.move();
 
-
-  inimigos.forEach( inimigo =>{
-    inimigo.exibe();
-    inimigo.move();
-
-    if(personagem.estaColidindo(inimigo)){
-      //console.log('colidiu');
-      image(imagemGameOver, width / 3 - 100, height / 2)
-      noloop();
+  console.log(inimigoVisivel);
+  if (inimigoVisivel){
+    inimigoAtual++;       
+    if(inimigoAtual > 2){
+      inimigoAtual = parseInt(random(0,2));;
     }
-  }) 
+    inimigo.velocidade = parseInt(random(10,25));
+  }
+
+  if(personagem.estaColidindo(inimigo)){      
+    image(imagemGameOver, width / 2 - 200, height / 3)
+    noLoop();
+  }
+  
   
 }
 
