@@ -176,7 +176,7 @@ function draw() {
 
     if(personagem.estaColidindo(inimigo)){
       //console.log('colidiu');
-      image(imagemGameOver, width / 2 - 200, height / 2)
+      image(imagemGameOver, width / 3 - 100, height / 2)
       noloop();
     }
   }) 
