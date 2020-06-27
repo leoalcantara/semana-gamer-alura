@@ -4,10 +4,12 @@ let imagemInimigo;
 let imagemInimigoGrande;
 let imagemInimigoVoador;
 let imagemGameOver;
+let jogo;
 
 let cenario;
 let somDojogo;
 let somDoPulo;
+let personagem;
 let inimigo;
 let inimigoGrande;
 let inimigoVoador;
