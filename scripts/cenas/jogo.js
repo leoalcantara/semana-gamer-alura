@@ -1,5 +1,5 @@
 class Jogo{
-    constuctor(){
+    constructor(){
         this.inimigoAtual = 0;        
     }
 
@@ -25,33 +25,34 @@ class Jogo{
     }
 
     draw(){
-          cenario.exibe();
-  cenario.move();   
+        cenario.exibe();
+        cenario.move();   
+          
+        pontuacao.exibe();
+        pontuacao.adicionarPonto();
+          
+        personagem.exibe();
+        personagem.aplicaGravidade();  
 
-  pontuacao.exibe();
-  pontuacao.adicionarPonto();
-
-  personagem.exibe();
-  personagem.aplicaGravidade();  
-
-  const inimigo = inimigos[inimigoAtual];  
-  const inimigoVisivel =  inimigo.x < -inimigo.largura;
-    
-  inimigo.exibe();
-  inimigo.move();
-
-  console.log(inimigoVisivel);
-  if (inimigoVisivel){
-    inimigoAtual++;       
-    if(inimigoAtual > 2){
-      inimigoAtual = parseInt(random(0,2));;
-    }
-    inimigo.velocidade = parseInt(random(10,25));
-  }
-
-  if(personagem.estaColidindo(inimigo)){      
-    image(imagemGameOver, width / 2 - 200, height / 3)
-    noLoop();
-  }
+                  
+        const inimigo = inimigos[this.inimigoAtual];  
+        const inimigoVisivel =  inimigo.x < -inimigo.largura;
+          
+        inimigo.exibe();
+        inimigo.move();
+          
+        console.log(inimigoVisivel);
+        if (inimigoVisivel){
+          this.inimigoAtual++;       
+          if(this.inimigoAtual > 2){
+            this.inimigoAtual = parseInt(random(0,2));;
+          }
+          inimigo.velocidade = parseInt(random(10,25));
+        }
+      
+        if(personagem.estaColidindo(inimigo)){      
+          image(imagemGameOver, width / 2 - 200, height / 3)
+          noLoop();
+        }
     }
 }

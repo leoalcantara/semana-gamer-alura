@@ -3,8 +3,16 @@ let imagemPersonagem;
 let imagemInimigo;
 let imagemInimigoGrande;
 let imagemInimigoVoador;
+let imagemTelaInicial;
 let imagemGameOver;
 let jogo;
+
+let fonteTelaInicial;
+
+let cenaAtual = 'telaInicial';
+let cenas;
+let telaInicial;
+let botaoGerenciador;
 
 let cenario;
 let somDojogo;
@@ -14,9 +22,6 @@ let inimigo;
 let inimigoGrande;
 let inimigoVoador;
 let pontuacao;
-
-let inimigoAtual = 0;
-
 
 const matrizInimigo = [
   [0, 0],

@@ -1,7 +1,9 @@
 function preload(){
+  imagemTelaInicial = loadImage('./imagens/cenario/telainicial.png');
     imagemCenario = loadImage('./imagens/cenario/floresta.png');
-    imagemPersonagem = loadImage('./imagens/personagem/correndo.png');
+    imagemPersonagem = loadImage('./imagens/personagem/correndo.png');    
     imagemGameOver = loadImage('./imagens/assets/game-over.png');
+    fonteTelaInicial = loadFont('./imagens/assets/fonteTelaInicial.otf');
   
     imagemInimigo = loadImage('./imagens/inimigos/gotinha.png');
     imagemInimigoGrande = loadImage('./imagens/inimigos/troll.png');
