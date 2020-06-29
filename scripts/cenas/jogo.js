@@ -53,9 +53,15 @@ class Jogo{
           inimigo.velocidade = parseInt(random(10,25));
         }
       
-        if(personagem.estaColidindo(inimigo)){      
-          image(imagemGameOver, width / 2 - 200, height / 3)
-          noLoop();
+        if(personagem.estaColidindo(inimigo)){  
+                  
+          vida.perdeVida();
+          personagem.tornarInvencivel();
+          if(vida.vidas === 0 ){
+            
+            image(imagemGameOver, width / 2 - 200, height / 3); 
+            noLoop(); 
+          }          
         }
     }
 }

@@ -16,7 +16,15 @@ class Vida{
             const posicao = this.xInicial * (1 + i);
             image(imagemVida, posicao + margem, this.y, this.largura, this.altura);
 
+        }        
+    }
+
+    ganhaVida(){
+        if(this.vidas < this.total){
+            this.vidas++;
         }
-        
+    }
+    perdeVida(){
+        this.vidas--;
     }
 }
