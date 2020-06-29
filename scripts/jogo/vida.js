@@ -15,7 +15,6 @@ class Vida{
             const margem = i * 10;
             const posicao = this.xInicial * (1 + i);
             image(imagemVida, posicao + margem, this.y, this.largura, this.altura);
-
         }        
     }
 

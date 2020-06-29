@@ -32,9 +32,8 @@ class Personagem extends Animacao{
         if(this.pulos < 2){
             this.velocidadeDoPulo = this.alturaDoPulo;
             this.pulos++;
-        }
-        
-    }
+        }        
+    }    
 
     aplicaGravidade(){
         this.y = this.y + this.velocidadeDoPulo;
@@ -50,7 +49,7 @@ class Personagem extends Animacao{
     tornarInvencivel(){
         this.invencivel = true;
         setTimeout(() => {
-            this.invencivel = false;
+            this.invencivel = false;            
         }, 1000);
     }
 
@@ -75,5 +74,4 @@ class Personagem extends Animacao{
 
          return colisao;
     }
-
 }

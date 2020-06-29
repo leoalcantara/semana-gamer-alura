@@ -1,5 +1,5 @@
 function preload(){
-  imagemTelaInicial = loadImage('./imagens/cenario/telainicial.png');
+  imagemTelaInicial = loadImage('./imagens/cenario/inicial.png');
     imagemCenario = loadImage('./imagens/cenario/floresta.png');
     imagemPersonagem = loadImage('./imagens/personagem/correndo.png'); 
     imagemVida = loadImage('./imagens/assets/coracao.png');     
@@ -9,7 +9,8 @@ function preload(){
     imagemInimigo = loadImage('./imagens/inimigos/gotinha.png');
     imagemInimigoGrande = loadImage('./imagens/inimigos/troll.png');
     imagemInimigoVoador = loadImage('./imagens/inimigos/gotinha-voadora.png');
-    
+
+    fita = loadJSON('../fita/fita.json');    
   
     somDojogo = loadSound('./sons/trilha_jogo.mp3');
     somDoPulo = loadSound('./sons/jump.mp3');

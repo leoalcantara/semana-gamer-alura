@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(40);
-  //somDojogo.loop();  
+  somDojogo.loop();  
   telaInicial = new TelaInicial();
   jogo = new Jogo();
   jogo.setup();
